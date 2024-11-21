@@ -2,8 +2,8 @@
 #Author: Theo Therman
 #Discord: AmericanOutsider#3308
 #FAQ: 
-#Purpose: Basic smoke image training
-#Last Updated: November 20, 2024
+#Purpose: Smoke image training
+#Last Updated: November 21, 2024
 ####################################################
 
 ######################################################
@@ -129,18 +129,7 @@ gosub smoke
 goto end.smoke
 
 smoke:
-goto inhale
-
-inhale:
-match get.lighter You need to be holding
-match skill.check You'll need to get
-match skill.check You take a long
-put inhale my %smoker
-matchwait
-
-purge:
-put exhale
-goto inhale
+goto skill.check
 
 skill.check:
 if %image = "deer" then goto deer.check
@@ -170,6 +159,9 @@ if %image = "phoenix" then goto phoenix.check
 if %image = "almanac" then goto almanac.check
 
 almanac.check:
+ECHO ####################
+ECHO # CHECKING ALMANAC #
+ECHO ####################
 match exhale almanac - beginner
 match exhale almanac - amateur
 match exhale almanac - adequate
@@ -180,11 +172,15 @@ match exhale almanac - sneezer
 match exhale almanac - whiffler
 match exhale almanac - streamer
 match exhale almanac - master
+match almanac.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 phoenix.check:
+ECHO ####################
+ECHO # CHECKING PHOENIX #
+ECHO ####################
 match exhale phoenix - beginner
 match exhale phoenix - amateur
 match exhale phoenix - adequate
@@ -195,11 +191,15 @@ match exhale phoenix - sneezer
 match exhale phoenix - whiffler
 match exhale phoenix - streamer
 match exhale phoenix - master
+match phoenix.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 grave.check:
+ECHO ####################
+ECHO # CHECKING GRAVE   #
+ECHO ####################
 match exhale grave - beginner
 match exhale grave - amateur
 match exhale grave - adequate
@@ -210,11 +210,15 @@ match exhale grave - sneezer
 match exhale grave - whiffler
 match exhale grave - streamer
 match exhale grave - master
+match grave.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 rams.check:
+ECHO ####################
+ECHO # CHECKING RAMS    #
+ECHO ####################
 match exhale rams - beginner
 match exhale rams - amateur
 match exhale rams - adequate
@@ -225,11 +229,15 @@ match exhale rams - sneezer
 match exhale rams - whiffler
 match exhale rams - streamer
 match exhale rams - master
+match rams.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 fleas.check:
+ECHO ####################
+ECHO # CHECKING FLEAS   #
+ECHO ####################
 match exhale fleas - beginner
 match exhale fleas - amateur
 match exhale fleas - adequate
@@ -240,11 +248,15 @@ match exhale fleas - sneezer
 match exhale fleas - whiffler
 match exhale fleas - streamer
 match exhale fleas - master
+match fleas.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 whip.check:
+ECHO ####################
+ECHO # CHECKING WHIP    #
+ECHO ####################
 match exhale whip - beginner
 match exhale whip - amateur
 match exhale whip - adequate
@@ -255,11 +267,15 @@ match exhale whip - sneezer
 match exhale whip - whiffler
 match exhale whip - streamer
 match exhale whip - master
+match whip.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 troll.check:
+ECHO ####################
+ECHO # CHECKING TROLL   #
+ECHO ####################
 match exhale troll - beginner
 match exhale troll - amateur
 match exhale troll - adequate
@@ -270,11 +286,15 @@ match exhale troll - sneezer
 match exhale troll - whiffler
 match exhale troll - streamer
 match exhale troll - master
+match troll.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 skeleton.check:
+ECHO #####################
+ECHO # CHECKING SKELETON #
+ECHO #####################
 match exhale skeleton - beginner
 match exhale skeleton - amateur
 match exhale skeleton - adequate
@@ -285,11 +305,15 @@ match exhale skeleton - sneezer
 match exhale skeleton - whiffler
 match exhale skeleton - streamer
 match exhale skeleton - master
+match skeleton.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 web.check:
+ECHO ####################
+ECHO # CHECKING WEB     #
+ECHO ####################
 match exhale web - beginner
 match exhale web - amateur
 match exhale web - adequate
@@ -300,11 +324,15 @@ match exhale web - sneezer
 match exhale web - whiffler
 match exhale web - streamer
 match exhale web - master
+match web.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 ship.check:
+ECHO ####################
+ECHO # CHECKING SHIP    #
+ECHO ####################
 match exhale ship - beginner
 match exhale ship - amateur
 match exhale ship - adequate
@@ -315,11 +343,15 @@ match exhale ship - sneezer
 match exhale ship - whiffler
 match exhale ship - streamer
 match exhale ship - master
+match ship.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 unicorn.check:
+ECHO ####################
+ECHO # CHECKING UNICORN #
+ECHO ####################
 match exhale unicorn - beginner
 match exhale unicorn - amateur
 match exhale unicorn - adequate
@@ -330,11 +362,15 @@ match exhale unicorn - sneezer
 match exhale unicorn - whiffler
 match exhale unicorn - streamer
 match exhale unicorn - master
+match unicorn.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 stump.check:
+ECHO ####################
+ECHO # CHECKING STUMP   #
+ECHO ####################
 match exhale stump - beginner
 match exhale stump - amateur
 match exhale stump - adequate
@@ -345,11 +381,15 @@ match exhale stump - sneezer
 match exhale stump - whiffler
 match exhale stump - streamer
 match exhale stump - master
+match stump.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 paladin.check:
+ECHO ####################
+ECHO # CHECKING PALADIN #
+ECHO ####################
 match exhale paladin - beginner
 match exhale paladin - amateur
 match exhale paladin - adequate
@@ -360,11 +400,15 @@ match exhale paladin - sneezer
 match exhale paladin - whiffler
 match exhale paladin - streamer
 match exhale paladin - master
+match paladin.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 kitten.check:
+ECHO ####################
+ECHO # CHECKING KITTEN  #
+ECHO ####################
 match exhale kitten - beginner
 match exhale kitten - amateur
 match exhale kitten - adequate
@@ -375,11 +419,15 @@ match exhale kitten - sneezer
 match exhale kitten - whiffler
 match exhale kitten - streamer
 match exhale kitten - master
+match kitten.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 dartboard.check:
+ECHO ######################
+ECHO # CHECKING DARTBOARD #
+ECHO ######################
 match exhale dartboard - beginner
 match exhale dartboard - amateur
 match exhale dartboard - adequate
@@ -390,11 +438,15 @@ match exhale dartboard - sneezer
 match exhale dartboard - whiffler
 match exhale dartboard - streamer
 match exhale dartboard - master
+match dartboard.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 bracelet.check:
+ECHO #####################
+ECHO # CHECKING BRACELET #
+ECHO #####################
 match exhale bracelet - beginner
 match exhale bracelet - amateur
 match exhale bracelet - adequate
@@ -405,11 +457,15 @@ match exhale bracelet - sneezer
 match exhale bracelet - whiffler
 match exhale bracelet - streamer
 match exhale bracelet - master
+match bracelet.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 bandit.check:
+ECHO ####################
+ECHO # CHECKING BANDIT  #
+ECHO ####################
 match exhale bandit - beginner
 match exhale bandit - amateur
 match exhale bandit - adequate
@@ -420,11 +476,15 @@ match exhale bandit - sneezer
 match exhale bandit - whiffler
 match exhale bandit - streamer
 match exhale bandit - master
+match bandit.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 fish.check:
+ECHO ####################
+ECHO # CHECKING FISH    #
+ECHO ####################
 match exhale fish - beginner
 match exhale fish - amateur
 match exhale fish - adequate
@@ -435,11 +495,15 @@ match exhale fish - sneezer
 match exhale fish - whiffler
 match exhale fish - streamer
 match exhale fish - master
+match fish.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 daisies.check:
+ECHO ####################
+ECHO # CHECKING DAISIES #
+ECHO ####################
 match exhale daisies - beginner
 match exhale daisies - amateur
 match exhale daisies - adequate
@@ -450,11 +514,15 @@ match exhale daisies - sneezer
 match exhale daisies - whiffler
 match exhale daisies - streamer
 match exhale daisies - master
+match daisies.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 cloak.check:
+ECHO ####################
+ECHO # CHECKING CLOAK   #
+ECHO ####################
 match exhale cloak - beginner
 match exhale cloak - amateur
 match exhale cloak - adequate
@@ -465,11 +533,15 @@ match exhale cloak - sneezer
 match exhale cloak - whiffler
 match exhale cloak - streamer
 match exhale cloak - master
+match cloak.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 horse.check:
+ECHO ####################
+ECHO # CHECKING HORSE   #
+ECHO ####################
 match exhale horse - beginner
 match exhale horse - amateur
 match exhale horse - adequate
@@ -480,11 +552,15 @@ match exhale horse - sneezer
 match exhale horse - whiffler
 match exhale horse - streamer
 match exhale horse - master
+match horse.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 deer.check:
+ECHO ####################
+ECHO # CHECKING DEER    #
+ECHO ####################
 match exhale deer - beginner
 match exhale deer - amateur
 match exhale deer - adequate
@@ -495,11 +571,15 @@ match exhale deer - sneezer
 match exhale deer - whiffler
 match exhale deer - streamer
 match exhale deer - master
+match deer.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 dragon.check:
+ECHO ####################
+ECHO # CHECKING DRAGON  #
+ECHO ####################
 match exhale dragon - beginner
 match exhale dragon - amateur
 match exhale dragon - adequate
@@ -510,11 +590,15 @@ match exhale dragon - sneezer
 match exhale dragon - whiffler
 match exhale dragon - streamer
 match exhale dragon - master
+match dragon.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 pixie.check:
+ECHO ####################
+ECHO # CHECKING PIXIE   #
+ECHO ####################
 match exhale pixie - beginner
 match exhale pixie - amateur
 match exhale pixie - adequate
@@ -525,11 +609,15 @@ match exhale pixie - sneezer
 match exhale pixie - whiffler
 match exhale pixie - streamer
 match exhale pixie - master
+match pixie.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 rabbit.check:
+ECHO ####################
+ECHO # CHECKING RABBIT  #
+ECHO ####################
 match exhale rabbit - beginner
 match exhale rabbit - amateur
 match exhale rabbit - adequate
@@ -540,11 +628,19 @@ match exhale rabbit - sneezer
 match exhale rabbit - whiffler
 match exhale rabbit - streamer
 match exhale rabbit - master
+match rabbit.check ...wait
 match return Total images
 put smoke list
 matchwait
 
 exhale:
+match get.lighter You need to be holding
+match exhale.line You'll need to get
+match exhale.line You take a long
+put inhale my %smoker
+matchwait
+
+exhale.line:
 put exhale line %image
 pause 0.5
 pause 0.5
