@@ -3,7 +3,7 @@
 #Discord: AmericanOutsider#3308
 #FAQ: 
 #Purpose: Smoke image training
-#Last Updated: November 21, 2024
+#Last Updated: November 22, 2024
 ####################################################
 
 ######################################################
@@ -17,6 +17,8 @@ var lighter bee
 var smoker cigar
 var lighter.container util belt
 var smoker.container mountain pack
+#How many times do you want to train images before the script ends?
+var max.train 10
 
 
 ############################################################
@@ -25,6 +27,7 @@ var smoker.container mountain pack
 #
 #
 #
+var train.counter 1
 goto get.lighter
 
 get.lighter:
@@ -72,6 +75,15 @@ put put my %lighter in my %lighter.container
 goto image.train
 
 image.train:
+if %train.counter <= %max.train then goto train.start
+	else goto end.smoke
+
+train.start:
+ECHO
+ECHO #################################################################
+ECHO Starting training Loop number %train.counter out of %max.train 
+ECHO #################################################################
+ECHO
 var image deer
 gosub smoke
 var image dragon
@@ -122,11 +134,14 @@ var image phoenix
 gosub smoke
 var image almanac
 gosub smoke
+math train.counter add 1
+
 
 
 #Change this to "goto end.smoke" to execute each image once, and stop
 #Change this to "goto image.train" to execute an infinite loop until you run out of cigars
-goto end.smoke
+#goto end.smoke
+goto image.train
 
 smoke:
 goto skill.check
