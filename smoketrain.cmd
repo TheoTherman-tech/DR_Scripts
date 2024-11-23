@@ -18,9 +18,9 @@ var smoker cigar
 var lighter.container util belt
 var smoker.container mountain pack
 ###How many times do you want to train images before the script ends?
-var max.train 2
+var max.train 10
 ###Do you want the script to loop indefinitely until you are out of cigars? YES or NO 
-var infinite.train YES
+var infinite.train NO
 
 ############################################################
 #### DO NOT EDIT BELOW HERE ################################
@@ -205,10 +205,6 @@ tart.check:
 ECHO ####################
 ECHO # CHECKING tart #
 ECHO ####################
-match exhale tart - beginner
-match exhale tart - amateur
-match exhale tart - adequate
-match exhale tart - competent
 match return tart - master*
 match exhale tart - wheezer
 match exhale tart - sneezer
