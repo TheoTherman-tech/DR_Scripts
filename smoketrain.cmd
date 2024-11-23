@@ -3,7 +3,7 @@
 #Discord: AmericanOutsider#3308
 #FAQ: 
 #Purpose: Smoke image training
-#Last Updated: November 22, 2024
+#Last Updated: November 23, 2024
 ####################################################
 
 ######################################################
@@ -17,9 +17,10 @@ var lighter bee
 var smoker cigar
 var lighter.container util belt
 var smoker.container mountain pack
-#How many times do you want to train images before the script ends?
-var max.train 10
-
+###How many times do you want to train images before the script ends?
+var max.train 2
+###Do you want the script to loop indefinitely until you are out of cigars? YES or NO 
+var infinite.train YES
 
 ############################################################
 #### DO NOT EDIT BELOW HERE ################################
@@ -82,6 +83,7 @@ train.start:
 ECHO
 ECHO #################################################################
 ECHO Starting training Loop number %train.counter out of %max.train 
+ECHO Will the script loop indefinitely? << %infinite.train >>
 ECHO #################################################################
 ECHO
 var image deer
@@ -134,13 +136,30 @@ var image phoenix
 gosub smoke
 var image almanac
 gosub smoke
+var image vine
+gosub smoke
+var image wolf
+gosub smoke
+var image mage
+gosub smoke
+var image trader
+gosub smoke
+var image violin
+gosub smoke
+var image forge
+gosub smoke
+var image altar
+gosub smoke
+var image moongate
+gosub smoke
+var image tart
+gosub smoke
+
+if %infinite.train = "YES" then goto train.start
+	else goto counter.add
+
+counter.add:
 math train.counter add 1
-
-
-
-#Change this to "goto end.smoke" to execute each image once, and stop
-#Change this to "goto image.train" to execute an infinite loop until you run out of cigars
-#goto end.smoke
 goto image.train
 
 smoke:
@@ -172,6 +191,186 @@ if %image = "rams" then goto rams.check
 if %image = "grave" then goto grave.check
 if %image = "phoenix" then goto phoenix.check
 if %image = "almanac" then goto almanac.check
+if %image = "vine" then goto vine.check
+if %image = "wolf" then goto wolf.check
+if %image = "mage" then goto mage.check
+if %image = "trader" then goto trader.check
+if %image = "violin" then goto violin.check
+if %image = "forge" then goto forge.check
+if %image = "altar" then goto altar.check
+if %image = "moongate" then goto moongate.check
+if %image = "tart" then goto tart.check
+
+tart.check:
+ECHO ####################
+ECHO # CHECKING tart #
+ECHO ####################
+match exhale tart - beginner
+match exhale tart - amateur
+match exhale tart - adequate
+match exhale tart - competent
+match return tart - master*
+match exhale tart - wheezer
+match exhale tart - sneezer
+match exhale tart - whiffler
+match exhale tart - streamer
+match exhale tart - master
+match tart.check ...wait
+match return Total images
+put smoke list
+matchwait
+
+moongate.check:
+ECHO ####################
+ECHO # CHECKING moongate #
+ECHO ####################
+match exhale moongate - beginner
+match exhale moongate - amateur
+match exhale moongate - adequate
+match exhale moongate - competent
+match return moongate - master*
+match exhale moongate - wheezer
+match exhale moongate - sneezer
+match exhale moongate - whiffler
+match exhale moongate - streamer
+match exhale moongate - master
+match moongate.check ...wait
+match return Total images
+put smoke list
+matchwait
+
+altar.check:
+ECHO ####################
+ECHO # CHECKING altar #
+ECHO ####################
+match exhale altar - beginner
+match exhale altar - amateur
+match exhale altar - adequate
+match exhale altar - competent
+match return altar - master*
+match exhale altar - wheezer
+match exhale altar - sneezer
+match exhale altar - whiffler
+match exhale altar - streamer
+match exhale altar - master
+match altar.check ...wait
+match return Total images
+put smoke list
+matchwait
+
+forge.check:
+ECHO ####################
+ECHO # CHECKING forge #
+ECHO ####################
+match exhale forge - beginner
+match exhale forge - amateur
+match exhale forge - adequate
+match exhale forge - competent
+match return forge - master*
+match exhale forge - wheezer
+match exhale forge - sneezer
+match exhale forge - whiffler
+match exhale forge - streamer
+match exhale forge - master
+match forge.check ...wait
+match return Total images
+put smoke list
+matchwait
+
+violin.check:
+ECHO ####################
+ECHO # CHECKING violin #
+ECHO ####################
+match exhale violin - beginner
+match exhale violin - amateur
+match exhale violin - adequate
+match exhale violin - competent
+match return violin - master*
+match exhale violin - wheezer
+match exhale violin - sneezer
+match exhale violin - whiffler
+match exhale violin - streamer
+match exhale violin - master
+match violin.check ...wait
+match return Total images
+put smoke list
+matchwait
+
+trader.check:
+ECHO ####################
+ECHO # CHECKING trader #
+ECHO ####################
+match exhale trader - beginner
+match exhale trader - amateur
+match exhale trader - adequate
+match exhale trader - competent
+match return trader - master*
+match exhale trader - wheezer
+match exhale trader - sneezer
+match exhale trader - whiffler
+match exhale trader - streamer
+match exhale trader - master
+match trader.check ...wait
+match return Total images
+put smoke list
+matchwait
+
+mage.check:
+ECHO ####################
+ECHO # CHECKING mage #
+ECHO ####################
+match exhale mage - beginner
+match exhale mage - amateur
+match exhale mage - adequate
+match exhale mage - competent
+match return mage - master*
+match exhale mage - wheezer
+match exhale mage - sneezer
+match exhale mage - whiffler
+match exhale mage - streamer
+match exhale mage - master
+match mage.check ...wait
+match return Total images
+put smoke list
+matchwait
+
+wolf.check:
+ECHO ####################
+ECHO # CHECKING wolf #
+ECHO ####################
+match exhale wolf - beginner
+match exhale wolf - amateur
+match exhale wolf - adequate
+match exhale wolf - competent
+match return wolf - master*
+match exhale wolf - wheezer
+match exhale wolf - sneezer
+match exhale wolf - whiffler
+match exhale wolf - streamer
+match exhale wolf - master
+match wolf.check ...wait
+match return Total images
+put smoke list
+matchwait
+
+vine.check:
+ECHO ####################
+ECHO # CHECKING vine #
+ECHO ####################
+match exhale vine - beginner
+match exhale vine - amateur
+match exhale vine - adequate
+match exhale vine - competent
+match return vine - master*
+match exhale vine - wheezer
+match exhale vine - sneezer
+match exhale vine - whiffler
+match exhale vine - streamer
+match exhale vine - master
+match vine.check ...wait
+match return Total images
+put smoke list
+matchwait
 
 almanac.check:
 ECHO ####################
