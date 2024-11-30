@@ -18,7 +18,7 @@ var smoker.container mountain pack
 ########################################################################################################################################
 #Usage .smoketeach <image> <player>                                                                                                    #
 #This is to be used in conjunction with .smokelearn                                                                                    #
-#The teacher should start first as it will prompt the student with what image they are going to learn.                                 #
+#The student should start first as it will prompt the teacher to let them know the student is ready                                    #
 #Both must be running and it is best to not perform any actions beyond talking to each other, do not whisper while script is running   #
 ########################################################################################################################################
 
@@ -83,7 +83,7 @@ goto smoke.teach
 smoke.teach:
 put inhale my %smoker
 ECHO Waiting for student to inhale their cigar.
-waitfor takes a long drag off
+waitfor takes a long drag
 put exhale line %1
 pause 0.5
 pause 0.5

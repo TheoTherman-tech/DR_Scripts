@@ -19,11 +19,11 @@ var smoker.container mountain pack
 ########################################################################################################################################
 #Usage .smokelearn <image> <player>                                                                                                    #
 #This is to be used in conjunction with .smoketeach                                                                                    #
-#The teacher should start first as it will prompt the student with what image they are going to learn.                                 #
+#The student should start first as it will prompt the teacher to let them know the student is ready                                    #
 #Both must be running and it is best to not perform any actions beyond talking to each other, do not whisper while script is running   #
 ########################################################################################################################################
 
-put whisper %2 !!! Smoke learning script is running, and awaiting instruction! 
+put whisper %2 !!! Smoke learning script is running, and awaiting instruction! Teaching player, please start .smoketeach <image> <player>
 ECHO Waiting for smoking teacher to start .smoketeach
 waitfor <<<Lets start teaching>>>
 goto get.lighter
@@ -81,12 +81,13 @@ goto smoke.learn
 
 smoke.learn:
 put whisper %2 !!! Ready! !!!
-ECHO Waiting for teacher to demonstrate image.
-waitfor takes a long drag off
+ECHO Waiting for teacher to inhale
+waitfor takes a long drag
 goto attempt.inhale
 
 attempt.inhale:
 put inhale my %smoker
+pause 3
 match learn.done You now know the basics
 match smoke.learn Roundtime
 put exhale line %1

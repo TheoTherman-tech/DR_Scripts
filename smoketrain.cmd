@@ -17,9 +17,10 @@ var lighter bee
 var smoker cigar
 var lighter.container util belt
 var smoker.container mountain pack
-###How many times do you want to train images before the script ends?
+###How many times do you want to train images before the script re-checks image experience
 var max.train 10
-###Do you want the script to loop indefinitely until you are out of cigars? YES or NO 
+## Do you want the script to loop indefinitely until you are out of cigars? (YES or NO)
+## If NO, the script will end after it has completed as many loops as defined by max.train.
 var infinite.train NO
 
 ############################################################
@@ -28,6 +29,7 @@ var infinite.train NO
 #
 #
 #
+start:
 var train.counter 1
 
 #################################################
@@ -1013,12 +1015,15 @@ ECHO ## Flint is not currently supported, but will be someday ##
 ECHO ###########################################################
 ECHO
 ECHO
+put #PARSE !END_SMOKETRAIN!
+ECHO
 exit
 
 get.smoker:
 match no.smoker What were you
 match no.smoker I could not find
 match light.smoker You get
+match light.smoker You need a
 put get my %smoker from my %smoker.container
 matchwait
 
@@ -1032,6 +1037,9 @@ ECHO ## Tobacco and pipes have not been added yet.            ##
 ECHO ###########################################################
 ECHO
 ECHO
+ECHO
+put #PARSE !END_SMOKETRAIN!
+ECHO
 exit
 
 light.smoker:
@@ -1043,7 +1051,7 @@ goto train.counter.check
 
 train.counter.check:
 if %train.counter <= %max.train then goto train.smoke.images
-	else goto end.smoke
+	else goto infinite.check
 
 train.smoke.images:
 ECHO #################################################
@@ -1085,8 +1093,12 @@ gosub forge.train
 gosub altar.train
 gosub moongate.train
 gosub tart.train
-if %infinite.train = "YES" then goto train.smoke.images
-	else goto counter.add
+goto counter.add
+
+
+infinite.check:
+if %infinite.train = "YES" then goto start
+	else goto end.smoke
 
 counter.add:
 math train.counter add 1
@@ -1282,6 +1294,7 @@ ECHO #################################
 match get.lighter You need to be holding
 match exhale.line You'll need to get
 match exhale.line You take a long
+match get.lighter What were you
 put inhale my %smoker
 matchwait
 
