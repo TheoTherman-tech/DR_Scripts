@@ -1249,32 +1249,32 @@ if %train.mage = 1 then goto smoke
 else return
 
 trader.train:
-var training.itrader trader
+var training.image trader
 if %train.trader = 1 then goto smoke 
 else return
 
 violin.train:
-var training.iviolin violin
+var training.image violin
 if %train.violin = 1 then goto smoke 
 else return
 
 forge.train:
-var training.iforge forge
+var training.image forge
 if %train.forge = 1 then goto smoke 
 else return
 
 altar.train:
-var training.ialtar altar
+var training.image altar
 if %train.altar = 1 then goto smoke 
 else return
 
 moongate.train:
-var training.imoongate moongate
+var training.image moongate
 if %train.moongate = 1 then goto smoke 
 else return
 
 tart.train:
-var training.itart tart
+var training.image tart
 if %train.tart = 1 then goto smoke 
 else return
 
